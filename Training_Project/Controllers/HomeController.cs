@@ -6,7 +6,7 @@ namespace Training_Project.Controllers
     {
         public IActionResult Index()
         {
-            return Content("Данные из первого контроллера");
+            return View();
         }
     }
 }
