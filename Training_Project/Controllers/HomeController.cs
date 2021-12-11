@@ -8,5 +8,10 @@ namespace Training_Project.Controllers
         {
             return View();
         }
+
+        public string ConfiguredAction(string id, string Value1)
+        {
+            return $"Hello world {id} - {Value1}";
+        }
     }
 }

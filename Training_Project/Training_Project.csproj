@@ -7,4 +7,8 @@
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+
 </Project>
