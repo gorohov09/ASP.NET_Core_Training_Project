@@ -22,7 +22,12 @@ app.UseRouting(); //Добавление системы маршрутизации
 //app.MapGet("/", () => app.Configuration["CustomGreetings"]);
 app.MapGet("/throw", () => { throw new ApplicationException("Ошибка в программе!"); });
 
-app.MapDefaultControllerRoute(); //Добавляем обработку входящих соединений системой MVC
+//app.MapDefaultControllerRoute(); //Добавляем обработку входящих соединений системой MVC
+//Маршрут - адресс, который мы вводим в адресную строку браузера
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "/{controller=Home}/{action=Index}/{id?}");
 
 
 
