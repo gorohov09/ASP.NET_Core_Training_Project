@@ -1,17 +1,19 @@
-var builder = WebApplication.CreateBuilder(args);
+var builder = WebApplication.CreateBuilder(args); //Создаем построитель приложения(объект)
 
+#region Настройка построителя приложения - определение содержимого
 //Получили сервисы
-var services = builder.Services;
+var services = builder.Services; //Коллекция сервисов нашего приложения
 services.AddControllersWithViews(); // Подключили структуру MVC
+#endregion
 
-var app = builder.Build();
+var app = builder.Build(); //Билдер строит наше приложение(Сборка приложения)
 
 // Загрузка информации из файла конфигурации
 //var configuration = app.Configuration;
 //var greetings = configuration["CustomGreetings"];
 
 //Конвейер обработки входного соединения
-
+#region Конфигурирование конфейера обработки входящих соединений
 if (app.Environment.IsDevelopment())
 {
     app.UseDeveloperExceptionPage(); //Инструмент, который позволяет перехватывать все ошибки
@@ -29,7 +31,7 @@ app.MapControllerRoute(
     name: "default",
     pattern: "/{controller=Home}/{action=Index}/{id?}");
 
+#endregion
 
-
-app.Run();
+app.Run(); //Приложение стартует и начинает принимать входящие запросы
 
